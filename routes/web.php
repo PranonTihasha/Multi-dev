@@ -29,3 +29,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('admin/login', [App\Http\Controllers\AdminController::class, 'ShowADminLogINForm'])->name('admin.login');
+Route::get('admin/register', [App\Http\Controllers\AdminController::class, 'ShowADminRegisterForm'])->name('admin.register');
+Route::get('admin/dashboard', [App\Http\Controllers\AdminController::class, 'ShowDashboard'])->name('admin.dashboard');
