@@ -2,7 +2,7 @@
 
 	@section('main-content')
 
-	
+
 <!-- Main Wrapper -->
 <div class="main-wrapper login-body">
 
@@ -18,12 +18,13 @@
 					<p class="account-subtitle">Access to our dashboard</p>
 					
 					<!-- Form -->
-					<form action="https://dreamguys.co.in/demo/doccure/admin/index.html">
+					<form action="{{ route('admin.login') }}" method="POST">
+						@csrf
 						<div class="form-group">
-							<input class="form-control" type="text" placeholder="Email">
+							<input name="email"  class="form-control" type="text" placeholder="Email">
 						</div>
 						<div class="form-group">
-							<input class="form-control" type="text" placeholder="Password">
+							<input name="password" class="form-control" type="text" placeholder="Password">
 						</div>
 						<div class="form-group">
 							<button class="btn btn-primary btn-block" type="submit">Login</button>
@@ -52,6 +53,8 @@
 </div>
 </div>
 <!-- /Main Wrapper -->
-	@endsection
+
+
+@endsection
 	
 	
