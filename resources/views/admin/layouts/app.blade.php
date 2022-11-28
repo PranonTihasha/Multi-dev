@@ -36,6 +36,7 @@
 		
 		<!-- jQuery -->
         <script src="{{ asset('admin/assets/js/jquery-3.2.1.min.js') }}"></script>
+       
 		
 		<!-- Bootstrap Core JS -->
         <script src="{{ asset('admin/assets/js/popper.min.js') }}"></script>
@@ -50,6 +51,7 @@
 
 		<!-- Custom JS -->
 		<script src="{{ asset('admin/assets/js/script.js') }}"></script>
+        <script src="{{ asset('admin/assets/js/comet/custom.js') }}"></script>
 		
     </body>
 </html>

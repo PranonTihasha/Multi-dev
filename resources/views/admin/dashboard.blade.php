@@ -132,7 +132,11 @@
 						</div>
 						<a class="dropdown-item" href="profile.html">My Profile</a>
 						<a class="dropdown-item" href="settings.html">Settings</a>
-						<a class="dropdown-item" href="login.html">Logout</a>
+						<!-- logout feature -->
+						<a id="user_logout" class="dropdown-item" href="login.html">Logout</a>
+						<form id="user_form" action="{{ route('admin.logout') }}" method="POST">
+						@csrf		
+					</form>
 					</div>
 				</li>
 				<!-- /User Menu -->
