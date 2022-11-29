@@ -44,7 +44,10 @@ Route::post('admin/logout', [App\Http\Controllers\Auth\LoginController::class, '
 Route::post('admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('admin.register');
 
 
+// Post route
 
+Route::resource('post', 'App\Http\Controllers\PostController');
+Route::resource('category', 'App\Http\Controllers\CategoryController');
 
 
 
