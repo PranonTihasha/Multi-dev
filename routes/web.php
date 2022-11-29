@@ -41,3 +41,10 @@ Route::get('admin/dashboard', [App\Http\Controllers\AdminController::class, 'Sho
 
 Route::post('admin/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('admin.login');
 Route::post('admin/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('admin.logout');
+Route::post('admin/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('admin.register');
+
+
+
+
+
+
