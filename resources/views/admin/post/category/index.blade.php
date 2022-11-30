@@ -50,29 +50,37 @@
 										<table class="table mb-0">
 											<thead>
 												<tr>
-													<th>#</th>
-													<th>Post Title</th>
-													<th>Catagory</th>
-													<th>Tag</th>
-													<th>Date</th>
-													<th>Action</th>
+													<th>SL</th>
+													<th>Category Name</th>
+													<th>Catagory slug</th>
+													<th>Published On</th>
+													<th>Time</th>
+													<th>Status</th>
 												</tr>
 											</thead>
 											<tbody>
+												@foreach($all_data as $data)
 												<tr>
-													<td>John</td>
-													<td>Doe</td>
-													<td>john@example.com</td>
-													<td>john@example.com</td>
-													<td>john@example.com</td>
+													<td>{{ $loop -> index +1 }}</td>
+													<td>{{ $data-> name }}</td>
+													<td>{{ $data-> slug }}</td>
+													<td>{{ $data-> created_at->diffForHumans() }}</td>
 													<td>
-														<a class="btn btn-sm btn-info" href="#">view</a>
-														<a class="btn btn-sm btn-warning" href="#">view</a>
-														<a class="btn btn-sm btn-danger" href="#">view</a>
+														<div class="status-toggle">
+															<input status_id="{{ $data->id }}" type="checkbox"  {{ ( $data -> status == true ? 'checked="checked"' : '') }} id="cat_status_{{ $loop -> index +1 }}" class="check cat_check">
+															<label for="cat_status_{{  $loop -> index +1 }}" class="checktoggle">checkbox</label>
+														</div>
+													</td>
+
+													<td>
+														<a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+														<a class="btn btn-sm btn-warning" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a class="btn btn-sm btn-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
 													</td>
 												</tr>
 												
 											</tbody>
+											@endforeach
 										</table>
 									</div>
 								</div>

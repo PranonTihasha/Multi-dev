@@ -25,6 +25,7 @@
 		<link rel="stylesheet" href="{{ asset('admin/assets/plugins/morris/morris.css') }}">
 		
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
 
 		<!--[if lt IE 9]>

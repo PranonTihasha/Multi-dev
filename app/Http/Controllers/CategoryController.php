@@ -15,8 +15,12 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+
     {
-        return view('admin.post.category.index');
+        $data = Category::all();
+        return view('admin.post.category.index',[
+            'all_data' => $data,
+        ]);
     }
 
     /**
@@ -93,4 +97,23 @@ class CategoryController extends Controller
     {
         //
     }
+    
+
+    public function StatusUpdateInActive($id){
+
+        // echo  $id;
+        $status_update = Category::find($id);
+        $status_update ->status = false;
+        $status_update-> update();
+    }
+
+
+    public function StatusUpdateActive($id){
+
+        // echo  $id;
+        $status_update = Category::find($id);
+        $status_update ->status = true;
+        $status_update-> update();
+    }
 }
+
