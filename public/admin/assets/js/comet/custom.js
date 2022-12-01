@@ -33,7 +33,6 @@ $(document).on('click', 'input.cat_check', function() {
     });
 
 
-
     // delete button
     $('.delete-btn').click(function(){
 
@@ -48,6 +47,9 @@ $(document).on('click', 'input.cat_check', function() {
        
       
     });
+
+    //edit category
+   
 
 })(jQuery)
 

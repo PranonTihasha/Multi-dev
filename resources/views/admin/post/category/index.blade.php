@@ -74,7 +74,7 @@
 
 													<td>
 														<!-- <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a> -->
-														<a class="btn btn-sm btn-warning" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+														<a edit_id="{{ $data->id }}" class="btn btn-sm btn-warning edit_cat" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 														
 															<form class="d-inline" action="{{ route('category.destroy', $data ->id) }}" method="POST">
 																@csrf
@@ -131,6 +131,31 @@
 			</div>
 		</div>
 	</div>
+
+
+<!-- model form for catagory Edit -->
+<div id="edit_category_model" class="modal fade">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">	
+					<h2>Edit Catagory</h2>
+					<form action="{{ route('category.update', 1) }}" method="POST">
+						@csrf
+						@method('PUT')
+						<div class="from-group">
+							<label for="">Name</label>
+							<input name="name" type="text" class="form-control">
+						</div>
+						<br>
+						<div class="from-group">	
+							<input type="submit" class="btn btn-sm btn-primary">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 
 	@endsection
