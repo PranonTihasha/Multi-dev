@@ -33,6 +33,22 @@ $(document).on('click', 'input.cat_check', function() {
     });
 
 
+
+    // delete button
+    $('.delete-btn').click(function(){
+
+
+       let conf = confirm('are you sure?')
+
+       if(conf ==  true){
+        return true;
+       }else{
+        return false;
+       }
+       
+      
+    });
+
 })(jQuery)
 
 

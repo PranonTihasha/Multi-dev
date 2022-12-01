@@ -67,15 +67,22 @@
 													<td>{{ $data-> created_at->diffForHumans() }}</td>
 													<td>
 														<div class="status-toggle">
-															<input status_id="{{ $data->id }}" type="checkbox"  {{ ( $data -> status == true ? 'checked="checked"' : '') }} id="cat_status_{{ $loop -> index +1 }}" class="check cat_check">
+															<input status_id="{{ $data ->id }}" type="checkbox"  {{ ( $data -> status == true ? 'checked="checked"' : '') }} id="cat_status_{{ $loop -> index +1 }}" class="check cat_check">
 															<label for="cat_status_{{  $loop -> index +1 }}" class="checktoggle">checkbox</label>
 														</div>
 													</td>
 
 													<td>
-														<a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+														<!-- <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a> -->
 														<a class="btn btn-sm btn-warning" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-														<a class="btn btn-sm btn-danger" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
+														
+															<form class="d-inline" action="{{ route('category.destroy', $data ->id) }}" method="POST">
+																@csrf
+																@method('DELETE')
+
+																<button class="btn btn-sm btn-danger delete-btn"><i class="fa fa-trash" aria-hidden="true"></i></button>
+															</form>
+													
 													</td>
 												</tr>
 												

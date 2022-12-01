@@ -95,7 +95,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // echo $id;
+        $delete_date = Category::find($id);
+        $delete_date-> delete();
+        return redirect()->back()->with('confirm', 'Delete Data successfully.');
     }
     
 
